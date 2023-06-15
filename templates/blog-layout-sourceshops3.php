@@ -357,7 +357,7 @@ if ($content_align && ('grid' === $blog_layout || 'masonry' === $blog_layout || 
 								<div class="fusion-clearfix"></div>
 							<?php endif; ?>
 
-							<!-- вставка языка пргрмрвния -->
+							<!-- вставка языка программирования -->
 							<div>
 								<span class="languages3">
 									<?php echo esc_html__('Язык:') ?>
