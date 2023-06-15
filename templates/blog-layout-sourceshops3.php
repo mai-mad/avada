@@ -360,7 +360,7 @@ if ($content_align && ('grid' === $blog_layout || 'masonry' === $blog_layout || 
 							<!-- вставка языка программирования -->
 							<div>
 								<span class="languages3">
-									<?php echo esc_html__('Язык:') ?>
+									<?php echo esc_html__('Язык2:') ?>
 								</span>
 
 								<?php $languages3 = get_field('languages3'); ?>
