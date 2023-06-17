@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div id="post-<?php the_ID(); ?>" <?php post_class( 'fusion-archive-description' ); ?>>
 			<div class="post-content">
 				<?php echo category_description(); ?>
-
+	
 			</div>
 		</div>
 	<?php endif; ?>
