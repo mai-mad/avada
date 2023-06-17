@@ -348,7 +348,7 @@ if ($content_align && ('grid' === $blog_layout || 'masonry' === $blog_layout || 
 								</span>
 							</div>
 							<!-- вставка линка -->
-							<?php $link = get_field('linksource3'); ?>
+							<?php $link = get_field('sourceprice3'); ?>
 							<span>
 								<a class="fusion-button button-flat fusion-button-default-size button-default fusion-button-default button-1 fusion-button-default-span fusion-button-default-type"
 									href="<?php echo esc_url($link); ?>" target="_blank">Купить <?php echo '$' . $price; ?></a>
