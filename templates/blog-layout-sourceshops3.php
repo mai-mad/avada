@@ -360,7 +360,7 @@ if ($content_align && ('grid' === $blog_layout || 'masonry' === $blog_layout || 
 							<!-- вставка языка программирования -->
 							<div>
 								<span class="languages3">
-									<?php echo esc_html__('Язык4:') ?>
+									<?php echo esc_html__('Язык:') ?>
 								</span>
 
 								<?php $languages3 = get_field('languages3'); ?>
@@ -371,10 +371,10 @@ if ($content_align && ('grid' === $blog_layout || 'masonry' === $blog_layout || 
 
 
 							<!-- вставка картинки -->
+
 							<?php
 							$image = get_field('sourceimg3');
 							$size = 'medium'; // (thumbnail, , large, full or custom size)
-							echo $image;
 							if ($image) {
 								$permalink = get_permalink($post_id);
 								echo "<a href='$permalink'>";
