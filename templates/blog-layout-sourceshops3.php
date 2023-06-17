@@ -340,113 +340,128 @@ if ($content_align && ('grid' === $blog_layout || 'masonry' === $blog_layout || 
 							<!--  вставка шорт описания -->
 							<div>
 								<span class="sourcedescription3">
-									<?php echo esc_html__('любое описание:') ?>
+									<?php echo esc_html__('любое описание2:') ?>
 								</span>
 								<?php $sourcedescription2 = get_field('sourcedescription3'); ?>
 								<span class="sourcedescription3">
 									<?php echo $sourcedescription3; ?>
 								</span>
 							</div>
+							<!-- цена-->
+							<?php $price = get_field('sourceprice3'); ?>
+							<span class="usdpricesources">
+
+							</span>
+
+
 							<!-- вставка линка -->
-							<?php $link = get_field('sourceprice3'); ?>
+							<?php $link = get_field('linksource3'); ?>
 							<span>
 								<a class="fusion-button button-flat fusion-button-default-size button-default fusion-button-default button-1 fusion-button-default-span fusion-button-default-type"
 									href="<?php echo esc_url($link); ?>" target="_blank">Купить <?php echo '$' . $price; ?></a>
-							</span>		
-							<?php if ('medium' === $blog_layout || 'medium-alternate' === $blog_layout): ?>
-								<div class="fusion-clearfix"></div>
-							<?php endif; ?>
-
-							<!-- вставка языка программирования -->
+							</span>
+							<!-- вставка языка пргрмрвния -->
 							<div>
-								<span class="languages3">
-									<?php echo esc_html__('Язык:') ?>
+								<!-- вставка линка -->
+								<?php $link = get_field('linksource3'); ?>
+								<span>
+									<a class="fusion-button button-flat fusion-button-default-size button-default fusion-button-default button-1 fusion-button-default-span fusion-button-default-type"
+										href="<?php echo esc_url($link); ?>" target="_blank">Купить <?php echo '$' . $price; ?></a>
 								</span>
+								<?php if ('medium' === $blog_layout || 'medium-alternate' === $blog_layout): ?>
+									<div class="fusion-clearfix"></div>
+								<?php endif; ?>
 
-								<?php $languages3 = get_field('languages3'); ?>
-								<span class="languages3">
-									<?php echo $languages3; ?>
-								</span>
-							</div>
+								<!-- вставка языка программирования -->
+								<div>
+									<span class="languages3">
+										<?php echo esc_html__('Язык:') ?>
+									</span>
+
+									<?php $languages3 = get_field('languages3'); ?>
+									<span class="languages3">
+										<?php echo $languages3; ?>
+									</span>
+								</div>
 
 
-							<!-- вставка картинки -->
+								<!-- вставка картинки -->
 
-							<?php
-							$image = get_field('sourceimg3');
-							$size = 'medium'; // (thumbnail, , large, full or custom size)
-							if ($image) {
-								$permalink = get_permalink($post_id);
-								echo "<a href='$permalink'>";
-								echo wp_get_attachment_image($image, $size);
-								echo '</a>';
-							}
-							?>
+								<?php
+								$image = get_field('sourceimg3');
+								$size = 'medium'; // (thumbnail, , large, full or custom size)
+								if ($image) {
+									$permalink = get_permalink($post_id);
+									echo "<a href='$permalink'>";
+									echo wp_get_attachment_image($image, $size);
+									echo '</a>';
+								}
+								?>
 
-	
-							<?php // Render post meta data according to layout. ?>
-							<?php if ($is_there_meta): ?>
-								<?php if ('grid' === $blog_layout || 'masonry' === $blog_layout || 'timeline' === $blog_layout): ?>
-									<?php // Render read more for grid/timeline layouts. ?>
-									<?php if ($display_comments || $display_read_more): ?>
+
+								<?php // Render post meta data according to layout. ?>
+								<?php if ($is_there_meta): ?>
+									<?php if ('grid' === $blog_layout || 'masonry' === $blog_layout || 'timeline' === $blog_layout): ?>
+										<?php // Render read more for grid/timeline layouts. ?>
+										<?php if ($display_comments || $display_read_more): ?>
+											<div class="fusion-meta-info">
+												<?php if ($display_read_more): ?>
+													<?php
+													$link_target = ('yes' === fusion_get_page_option('link_icon_target', $post->ID) || 'yes' === fusion_get_page_option('post_links_target', $post->ID)) ? ' target="_blank" rel="noopener noreferrer"' : '';
+													$readmore_alignment = !$display_comments && '' !== $content_align ? 'fusion-align' . $content_align : 'fusion-alignleft';
+													?>
+													<div class="<?php echo esc_attr($readmore_alignment); ?>">
+														<a href="<?php echo esc_url_raw(get_permalink()); ?>" class="fusion-read-more" <?php echo $link_target; // phpcs:ignore WordPress.Security.EscapeOutput ?>
+															aria-label="<?php esc_attr_e('More on', 'Avada'); ?> <?php the_title_attribute(); ?>">
+															<?php echo esc_textarea(apply_filters('avada_blog_read_more_link', esc_attr__('Read More', 'Avada'))); ?>
+														</a>
+													</div>
+												<?php endif; ?>
+
+												<?php // Render comments for grid/timeline layouts. ?>
+												<?php if ($display_comments): ?>
+													<?php $comment_alignment = !$display_read_more && '' !== $content_align ? 'fusion-align' . $content_align : 'fusion-alignright'; ?>
+													<div class="<?php echo esc_attr($comment_alignment); ?>">
+														<?php if (!post_password_required($post->ID)): ?>
+															<?php comments_popup_link('<i class="awb-icon-bubbles" aria-hidden="true"></i>&nbsp;0', '<i class="awb-icon-bubbles" aria-hidden="true"></i>&nbsp;1', '<i class="awb-icon-bubbles" aria-hidden="true"></i>&nbsp;%'); ?>
+														<?php else: ?>
+															<i class="awb-icon-bubbles" aria-hidden="true"></i>&nbsp;
+															<?php esc_attr_e('Protected', 'Avada'); ?>
+														<?php endif; ?>
+													</div>
+												<?php endif; ?>
+											</div>
+										<?php endif; ?>
+									<?php else: ?>
 										<div class="fusion-meta-info">
-											<?php if ($display_read_more): ?>
-												<?php
-												$link_target = ('yes' === fusion_get_page_option('link_icon_target', $post->ID) || 'yes' === fusion_get_page_option('post_links_target', $post->ID)) ? ' target="_blank" rel="noopener noreferrer"' : '';
-												$readmore_alignment = !$display_comments && '' !== $content_align ? 'fusion-align' . $content_align : 'fusion-alignleft';
-												?>
-												<div class="<?php echo esc_attr($readmore_alignment); ?>">
-													<a href="<?php echo esc_url_raw(get_permalink()); ?>" class="fusion-read-more" <?php echo $link_target; // phpcs:ignore WordPress.Security.EscapeOutput ?>
-														aria-label="<?php esc_attr_e('More on', 'Avada'); ?> <?php the_title_attribute(); ?>">
-														<?php echo esc_textarea(apply_filters('avada_blog_read_more_link', esc_attr__('Read More', 'Avada'))); ?>
-													</a>
-												</div>
+											<?php // Render all meta data for medium and large layouts. ?>
+											<?php if ('large' === $blog_layout || 'medium' === $blog_layout): ?>
+												<?php echo fusion_render_post_metadata('standard'); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 											<?php endif; ?>
 
-											<?php // Render comments for grid/timeline layouts. ?>
-											<?php if ($display_comments): ?>
-												<?php $comment_alignment = !$display_read_more && '' !== $content_align ? 'fusion-align' . $content_align : 'fusion-alignright'; ?>
-												<div class="<?php echo esc_attr($comment_alignment); ?>">
-													<?php if (!post_password_required($post->ID)): ?>
-														<?php comments_popup_link('<i class="awb-icon-bubbles" aria-hidden="true"></i>&nbsp;0', '<i class="awb-icon-bubbles" aria-hidden="true"></i>&nbsp;1', '<i class="awb-icon-bubbles" aria-hidden="true"></i>&nbsp;%'); ?>
-													<?php else: ?>
-														<i class="awb-icon-bubbles" aria-hidden="true"></i>&nbsp;
-														<?php esc_attr_e('Protected', 'Avada'); ?>
-													<?php endif; ?>
+											<?php // Render read more for medium/large and medium/large alternate layouts. ?>
+											<?php if ($display_read_more): ?>
+												<?php $link_target = ('yes' === fusion_get_page_option('link_icon_target', $post->ID) || 'yes' === fusion_get_page_option('post_links_target', $post->ID)) ? ' target="_blank" rel="noopener noreferrer"' : ''; ?>
+												<div class="fusion-alignright">
+													<a href="<?php echo esc_url_raw(get_permalink()); ?>" class="fusion-read-more" <?php echo $link_target; // phpcs:ignore WordPress.Security.EscapeOutput ?>
+														aria-label="<?php esc_attr_e('More on', 'Avada'); ?> <?php the_title_attribute(); ?>">
+														<?php echo esc_textarea(apply_filters('avada_read_more_name', esc_attr__('Read More', 'Avada'))); ?>
+													</a>
 												</div>
 											<?php endif; ?>
 										</div>
 									<?php endif; ?>
-								<?php else: ?>
-									<div class="fusion-meta-info">
-										<?php // Render all meta data for medium and large layouts. ?>
-										<?php if ('large' === $blog_layout || 'medium' === $blog_layout): ?>
-											<?php echo fusion_render_post_metadata('standard'); // phpcs:ignore WordPress.Security.EscapeOutput ?>
-										<?php endif; ?>
-
-										<?php // Render read more for medium/large and medium/large alternate layouts. ?>
-										<?php if ($display_read_more): ?>
-											<?php $link_target = ('yes' === fusion_get_page_option('link_icon_target', $post->ID) || 'yes' === fusion_get_page_option('post_links_target', $post->ID)) ? ' target="_blank" rel="noopener noreferrer"' : ''; ?>
-											<div class="fusion-alignright">
-												<a href="<?php echo esc_url_raw(get_permalink()); ?>" class="fusion-read-more" <?php echo $link_target; // phpcs:ignore WordPress.Security.EscapeOutput ?>
-													aria-label="<?php esc_attr_e('More on', 'Avada'); ?> <?php the_title_attribute(); ?>">
-													<?php echo esc_textarea(apply_filters('avada_read_more_name', esc_attr__('Read More', 'Avada'))); ?>
-												</a>
-											</div>
-										<?php endif; ?>
-									</div>
+								<?php elseif (!Avada()->settings->get('post_meta')): ?>
+									<?php echo fusion_render_rich_snippets_for_pages(); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 								<?php endif; ?>
-							<?php elseif (!Avada()->settings->get('post_meta')): ?>
-								<?php echo fusion_render_rich_snippets_for_pages(); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+
+								<?php if ('grid' === $blog_layout || 'masonry' === $blog_layout || 'timeline' === $blog_layout): ?>
+								</div>
 							<?php endif; ?>
 
-							<?php if ('grid' === $blog_layout || 'masonry' === $blog_layout || 'timeline' === $blog_layout): ?>
+							<?php if ('grid' === $blog_layout || 'masonry' === $blog_layout): ?>
 							</div>
 						<?php endif; ?>
-
-						<?php if ('grid' === $blog_layout || 'masonry' === $blog_layout): ?>
-						</div>
-					<?php endif; ?>
 				</article>
 
 				<?php
