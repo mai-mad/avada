@@ -337,17 +337,17 @@ if ($content_align && ('grid' === $blog_layout || 'masonry' === $blog_layout || 
 									?>
 								</div>
 							</div>
-							<!--  вставка шорт описания -->
-							<div>
+								<!--  вставка шорт описания -->
 								<span class="sourcedescription3">
 									<?php echo esc_html__('любое описание:') ?>
 								</span>
-								<?php $sourcedescription2 = get_field('sourcedescription3'); ?>
+								<?php $sourcedescription3 = get_field('sourcedescription3'); ?>
 								<span class="sourcedescription3">
 									<?php echo $sourcedescription3; ?>
 								</span>
-							</div>
-							<?php $price = get_field('sourceprice3'); ?>
+								<br>
+								<!-- цена-->
+								<?php $price = get_field('sourceprice3'); ?>
 								<span class="usdpricesources">
 									
 								</span>
