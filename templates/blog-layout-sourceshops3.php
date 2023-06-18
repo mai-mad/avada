@@ -339,7 +339,7 @@ if ($content_align && ('grid' === $blog_layout || 'masonry' === $blog_layout || 
 							</div>
 								<!--  вставка шорт описания -->
 								<span class="sourcedescription3">
-									<?php echo esc_html__('любое описание:') ?>
+									<?php echo esc_html__('Описание:') ?>
 								</span>
 								<?php $sourcedescription3 = get_field('sourcedescription3'); ?>
 								<span class="sourcedescription3">
