@@ -347,28 +347,18 @@ if ($content_align && ('grid' === $blog_layout || 'masonry' === $blog_layout || 
 									<?php echo $sourcedescription3; ?>
 								</span>
 							</div>
-							<!-- цена-->
 							<?php $price = get_field('sourceprice3'); ?>
-							<span>
-								<a class="fusion-button button-flat fusion-button-default-size button-default fusion-button-default button-1 fusion-button-default-span fusion-button-default-type"
-									href="<?php echo esc_url($link); ?>" target="_blank">Купить <?php echo '$' . $price; ?></a>
-							</span>
-
-
-							<!-- вставка линка -->
-							<?php $link = get_field('linksource3'); ?>
-							<span>
-								<a class="fusion-button button-flat fusion-button-default-size button-default fusion-button-default button-1 fusion-button-default-span fusion-button-default-type"
-									href="<?php echo esc_url($link); ?>" target="_blank">Купить <?php echo '$' . $price; ?></a>
-							</span>
-							<!-- вставка языка пргрмрвния -->
-							<div>
+								<span class="usdpricesources">
+									
+								</span>
+							
+								
 								<!-- вставка линка -->
-
-								<?php if ('medium' === $blog_layout || 'medium-alternate' === $blog_layout): ?>
-									<div class="fusion-clearfix"></div>
-								<?php endif; ?>
-
+								<?php $link = get_field('linksource3'); ?>
+								<span>
+									<a class="fusion-button button-flat fusion-button-default-size button-default fusion-button-default button-1 fusion-button-default-span fusion-button-default-type"
+										href="<?php echo esc_url($link); ?>" target="_blank">Купить <?php echo '$' . $price; ?></a>
+								</span>
 								<!-- вставка языка программирования -->
 								<div>
 									<span class="languages3">
