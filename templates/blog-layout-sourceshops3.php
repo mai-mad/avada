@@ -361,6 +361,36 @@ if ($content_align && ('grid' === $blog_layout || 'masonry' === $blog_layout || 
 								<a class="fusion-button button-flat fusion-button-default-size button-default fusion-button-default button-1 fusion-button-default-span fusion-button-default-type"
 									href="<?php echo esc_url($link); ?>" target="_blank">Купить <?php echo '$' . $price; ?></a>
 							</span>
+							<?php $link = get_field('linksource3'); ?>
+							<span>
+								<a class="fusion-button button-flat fusion-button-default-size button-default fusion-button-default button-1 fusion-button-default-span fusion-button-default-type"
+									href="<?php echo esc_url($link); ?>" target="_blank">Купить <?php echo '$' . $price; ?></a>
+							</span>
+							<?php $link = get_field('linksource3'); ?>
+							<span>
+								<a class="fusion-button button-flat fusion-button-default-size button-default fusion-button-default button-1 fusion-button-default-span fusion-button-default-type"
+									href="<?php echo esc_url($link); ?>" target="_blank">Купить <?php echo '$' . $price; ?></a>
+							</span>
+							<?php $link = get_field('linksource3'); ?>
+							<span>
+								<a class="fusion-button button-flat fusion-button-default-size button-default fusion-button-default button-1 fusion-button-default-span fusion-button-default-type"
+									href="<?php echo esc_url($link); ?>" target="_blank">Купить <?php echo '$' . $price; ?></a>
+							</span>
+							<?php $link = get_field('linksource3'); ?>
+							<span>
+								<a class="fusion-button button-flat fusion-button-default-size button-default fusion-button-default button-1 fusion-button-default-span fusion-button-default-type"
+									href="<?php echo esc_url($link); ?>" target="_blank">Купить <?php echo '$' . $price; ?></a>
+							</span>
+							<?php $link = get_field('linksource3'); ?>
+							<span>
+								<a class="fusion-button button-flat fusion-button-default-size button-default fusion-button-default button-1 fusion-button-default-span fusion-button-default-type"
+									href="<?php echo esc_url($link); ?>" target="_blank">Купить <?php echo '$' . $price; ?></a>
+							</span>
+							<?php $link = get_field('linksource3'); ?>
+							<span>
+								<a class="fusion-button button-flat fusion-button-default-size button-default fusion-button-default button-1 fusion-button-default-span fusion-button-default-type"
+									href="<?php echo esc_url($link); ?>" target="_blank">Купить <?php echo '$' . $price; ?></a>
+							</span>
 							<!-- вставка языка пргрмрвния -->
 							<div>
 								<!-- вставка линка -->
